@@ -1,0 +1,217 @@
+*{
+  transition:0.5s; 
+}
+
+h1,h2,h3,h4{
+  color:white;
+  font-family: "Georgia", serif; 
+  font-variant: small-caps; 
+}
+
+body{
+  margin:0 auto;
+  background-color:#18191A;
+  color:white;
+}
+
+
+p, li{
+  font-family:"Times New Roman",serif;
+  letter-spacing:1px;
+  line-height:30px;
+  font-size:20px;
+}
+
+a{
+  text-decoration:none;
+}
+
+nav a{
+  padding:15px 17px;
+  text-align: center;
+}
+
+nav a:hover{
+   background-color:darkred;
+    text-decoration-color: #740707;
+    text-decoration-line: underline;
+}
+
+nav h4{
+  color:rgba(255,255,255,0.8);
+  letter-spacing:2px;
+  display:inline;
+}
+
+nav h4{
+  color:rgba(255,255,255,0.8);
+  letter-spacing:2px;
+  display:inline;
+}
+
+nav h4:hover{
+  color:rgb(43, 89, 214);
+  border-bottom:2px solid rgb(72, 50, 197);
+}
+
+.containerU{
+  display:flex;
+}
+
+.containerU *{
+  flex:1;
+}
+
+.containerbar{
+  letter-spacing:2px;
+  font-size:25px;
+  text-align:center;
+  align-items:center;
+} 
+
+
+
+#flagfact{
+  padding:20px;
+  background-image: linear-gradient(to bottom right, #430a0a,#ffb3b3);
+  box-shadow:inset 5px -5px 0px 5px #430a0a;
+}
+
+.factbar{
+  text-align:center;
+  align-items:center;
+}
+
+
+#fbar{
+  padding:5px; 
+  background-color:#430a0a; 
+}
+
+#fbar h3{
+  font-size: 40px; 
+  text-align: center;
+}
+
+#fbar h3:hover{
+  text-decoration-color: white;
+  text-decoration: underline;
+  font-family: 'Lucida Handwriting', cursive;
+  letter-spacing: 5px;
+}
+
+#fbar h4{
+  font-size:20px; 
+}
+
+#container{
+  padding:10px; 
+  text-align: center;
+}
+
+#container h3{
+  font-size: 40px; 
+  text-align: center;
+}
+
+#container h3:hover{
+  text-decoration-color: white;
+  text-decoration: underline;
+  font-family: 'Lucida Handwriting', cursive;
+  letter-spacing: 5px;
+}
+
+#topbarcenter{
+  text-align:center;
+  font-size:50px;
+  background-image: url("");
+  padding:5px 5px;
+  box-shadow:2px 2px 5px rgba(0, 0, 0, 0.8); 
+}
+
+#topbarcenter{
+  max-width:none; 
+
+}
+
+#infoleft h1{
+  text-align: center;
+  font-size:80px;
+}
+
+#infoleft h1:hover{
+  text-decoration-color: white;
+  text-decoration: underline;
+  font-family: 'Lucida Handwriting', cursive;
+  letter-spacing: 5px;
+}
+
+img{
+  float:right; 
+  padding:20px;
+
+}
+
+.intro p{
+  line-height:1.5;
+  text-align:center;
+  font-size:29px;
+  padding-left:50px;
+  padding-right:80px; 
+  padding-top: 60px; 
+  padding-bottom:200px; 
+}
+
+
+#bottom{
+  display:flex;
+  flex-direction:column;
+  background-image: linear-gradient(to bottom right, #430a0a,#ffb3b3);
+  padding:40px;
+  box-shadow:inset 5px -5px 0px 5px #430a0a;
+}
+#bottom div{
+  flex:1;
+}
+
+#btop h2{
+  display:inline;
+  letter-spacing:3px;
+}
+#b-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#b-links div{
+  flex:1;
+  padding:10px 15px;
+}
+#b-links1 h3,{
+  text-shadow:1px 1px 5px black;
+  letter-spacing:3px;
+  border-bottom:2px solid white;
+  margin:8px 8px 15px 8px;
+}
+#b-links1 h4 {
+  text-shadow:1px 1px 5px black;
+  color:rgba(255,255,255,0.8);
+  font-size:17px;
+  letter-spacing:2px;
+  line-height:25px;
+  margin:8px;
+}
+#b-links1 h4:hover{
+  text-shadow:2px 2px 5px black;
+  font-family: 'Lucida Handwriting', cursive;
+  color:red;
+}
+#author{
+  text-shadow:1px 1px 5px black;
+  letter-spacing:3px;
+  display:flex;
+  text-align:right;
+}
+#author h4{
+  flex:1;
+}

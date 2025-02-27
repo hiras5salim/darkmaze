@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Maze Game</title>
+  <meta name="description" content="3D Maze Game">
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-maze-component@0.1.24/dist/aframe-maze-component.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <div class="start-container">
+      <h1>Maze Adventure</h1>
+      <p>Find your way through the maze and collect coins!</p>
+      <p>Use WASD to move and mouse to look around.</p>
+      <button id="start-button">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Victory Screen -->
+  <div id="victory-screen">
+    <div class="victory-container">
+      <h1>Victory!</h1>
+      <div id="final-score">
+        <p>Moves: <span id="final-moves">0</span></p>
+        <p>Coins: <span id="final-coins">0</span></p>
+        <p>Time: <span id="final-time">0</span>s</p>
+      </div>
+      <button id="play-again">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Game UI -->
+  <div id="game-ui">
+    <div id="instructions">
+      Find the golden beam to win!<br>
+      Collect coins to teleport closer to the goal.
+    </div>
+    <div id="score-container">
+      <div id="moves">Moves: 0</div>
+      <div id="coins">Coins: 0</div>
+      <div id="timer">Time: 0s</div>
+    </div>
+  </div>
+
+  <!-- A-Frame Scene -->
+  <a-scene physics="debug: false;">
+    <!-- Assets -->
+    <a-assets>
+      <img id="wall-texture" src="pinkss.jpg">
+      <img id="end-cap-texture" src="black.jpg">
+    </a-assets>
+
+    <!-- Maze Wall Template -->
+    <a-box static-body id="wall-one" class="wall" material="src: #wall-texture" depth="1" width="4" height="3">
+    </a-box>
+
+    <!-- Lights -->
+    <a-light type="ambient" color="#111111" intensity="0.05"></a-light>
+    <!-- No additional global lights to keep the environment dark -->
+
+    <!-- End Goal with Beacon -->
+    <a-entity id="end-goal" position="12 0.5 12">
+      <a-cylinder id="end-cap" static-body material="src: #end-cap-texture" depth="1.1" width="1.1" height="2"
+        radius="0.5"></a-cylinder>
+      <a-entity id="goal-beam" geometry="primitive: cylinder; radius: 0.2; height: 30"
+        material="color: yellow; opacity: 0.3; emissive: yellow" position="0 15 0"></a-entity>
+      <a-light type="point" color="yellow" intensity="1.5" distance="20"></a-light>
+    </a-entity>
+
+    <!-- Coins Container -->
+    <a-entity id="coins-container"></a-entity>
+
+    <!-- Sky -->
+    <a-sky id="sky" color="#111"></a-sky>
+
+    <!-- Player -->
+    <a-entity id="player" camera position="-10 1.6 -10" 
+      look-controls="pointerLockEnabled: true">
+      <a-entity id="head"></a-entity>
+      <a-cursor raycaster="objects: .clickable" color="yellow"></a-cursor>
+      <!-- Player spotlight that follows the player (increased brightness) -->
+      <a-entity id="player-light"
+        light="type: spot; color: #ffffff; intensity: 2.0; angle: 70; distance: 12; penumbra: 0.6; decay: 0.8; castShadow: true"></a-entity>
+    </a-entity>
+
+    <!-- Maze -->
+    <a-entity id="maze1" maze='size: 30 30; wall: #wall-one; cap: #end-cap; open: S 0 N 1 2 4 E 5;' position='-15 0 -15'
+      rotation='0 0 0'>
+    </a-entity>
+
+    <!-- Ground -->
+    <a-plane id="ground" color="#111" width="400" height="400" position="0 -0.1 0"
+      rotation="-90 0 0" visible="true"></a-plane>
+  </a-scene>
+</body>
+
+</html>
